@@ -1,0 +1,62 @@
+{% extends "index.html" %}
+{% load static %}
+{% block content %}
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+
+<div
+     class="bg-image"
+     style="
+            background-image: url('{%static '/img/co.png' %}');
+            height: 80vh;
+            "
+     >
+  <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);height: 80vh;" >
+<form action="" method="post">
+{% csrf_token %}
+     <div class="container-fluid text-white mb-0 ">
+   <div class="row">
+    <p class="display-5 text-center text-white mb-0 " style="height:25px;"> REGISTRATION
+    </p>
+   </div>   <div class="row pt-5">
+     <div class="col-3"></div>
+     <div class="col-6 ">
+           <div class="mb-3">
+    <label  class="form-label">Register Number</label>
+    <input type="text" class="form-control" id="register_number" name="register_number" required>
+  </div>
+<div class="mb-3">
+    <label  class="form-label">User Name</label>
+    <input type="text" class="form-control" id="username " name="username" required>
+  </div>
+<div class="mb-3">
+    <label  class="form-label">Department</label>
+    <input type="text" class="form-control" id="department " name="department" required>
+  </div>
+ <div class="mb-3">
+    <label  class="form-label">Email</label>
+    <input type="text" class="form-control" id="email" name="email" required>
+  </div>
+ <div class="mb-3">
+    <label  class="form-label">password1</label>
+    <input type="text" class="form-control" id="password1" name="password1" required>
+  </div>
+
+ <div class="mb-3">
+    <label  class="form-label">password2</label>
+    <input type="text" class="form-control" id="password2" name="password2" required>
+  </div>
+         <div class="form-group text-center">
+  <button type="submit" class="btn btn-primary btn-lg mt-5 text-center">Submit</button>
+             </div>
+     </div>
+   </div>
+ </div>
+
+</form>
+      </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends "index.html" %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+       <title>{% block title %}heloo {% end block %}</title>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+</head>
+<body>
+<form method="post">
+    {% csrf_token %}
+ <div class="container-fluid">
+   <div class="row">
+    <p class="display-3 text-center"> Student Complaint Registration</p>
+   </div>   <div class="row">
+     <div class="col-4">
+        <div class="mb-3">
+    <label class="form-label">Name</label>
+    <input type="text" class="form-control" id="name"  name="name" aria-describedby="emailHelp">
+
+  </div>
+  <div class="mb-3">
+    <label  class="form-label">Register Number</label>
+    <input type="text" class="form-control" id="regno" name="regno">
+  </div>
+ <div class="mb-3">
+    <label  class="form-label">Department</label>
+    <input type="text" class="form-control" id="dept" name="dept">
+  </div>
+<div class="form-floating">complaint
+  <textarea class="form-control" placeholder="Leave a comment here" id="complaintfor" name="complaintfor" style="height: 100px"></textarea>
+</div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+     </div>
+   </div>
+ </div>
+
+
+    <table border="1px"  class="table table-striped  table-dark">
+     <tr><th>S.no</th>
+    <th>Name</th>
+    <th>Reg No</th>
+    <th>Department</th>
+    <th>Complaint</th>
+     </tr>
+    {% for data in datas %}
+        <tr><td>{{forloop.counter}}</td>
+          <td>{{data.name}}</td>
+            <td>{{data.regno}}</td>
+            <td>{{data.dept}}</td>
+            <td>{{data.complaintfor}}</td><tr>
+    {% end for %}
+</table>
+</form>
+</body>
+</html>

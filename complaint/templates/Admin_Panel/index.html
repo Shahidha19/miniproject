@@ -1,0 +1,18 @@
+{% include "header.html" %}
+{% include "navbar.html" %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>navbar</title>
+    <script>
+	$(document).ready(function(){
+		$(".alert").hide(4000);
+	});
+</script>
+</head>
+<body>
+    {% block content %}
+
+    {% endblock %}
+</body>
+</html>

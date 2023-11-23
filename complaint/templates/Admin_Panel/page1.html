@@ -1,0 +1,55 @@
+{% extends "index.html" %}
+{% load static %}
+{% block content %}
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+
+<div
+     class="bg-image"
+     style="
+            background-image: url('{%static '/img/co.png' %}');
+            height: 80vh;
+            "
+     >
+  <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);height: 80vh;" >
+<form action="" method="post">
+{% csrf_token %}
+     <div class="container-fluid text-white mb-0 ">
+   <div class="row">
+    <p class="display-5 text-center text-white mb-0 " style="height:25px;"> Student Complaint Registration for fun
+    </p>
+   </div>   <div class="row pt-5">
+     <div class="col-3"></div>
+     <div class="col-6 ">
+         <div class="mb-3">
+    <label  class="form-label">Username</label>
+    <input type="text" class="form-control" id="username" name="username" value="{{user.username}}">
+  </div>
+           <div class="mb-3">
+    <label  class="form-label">Register Number</label>
+    <input type="text" class="form-control" id="regno" name="regno" required>
+  </div>
+
+
+ <div class="mb-3">
+    <label  class="form-label">Department</label>
+    <input type="text" class="form-control" id="dept" name="dept" required>
+  </div>
+
+<div class="form-floating">Complaint
+  <textarea class="form-control" placeholder="Leave a complaint here" id="complaint" name="complaint" style="height: 100px" required></textarea>
+</div><div class="form-group"><div class="float-left"><input type="radio" name="status" value="pending" required>CLICK HERE AND SUBMIT</div></div>
+         <div class="form-group text-center">
+  <button type="submit" class="btn btn-primary btn-lg mt-5 text-center">Submit</button>
+             </div>
+     </div>
+   </div>
+ </div>
+
+</form>
+      </div>
+
+</div>
+
+{% endblock %}

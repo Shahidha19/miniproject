@@ -1,0 +1,32 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+       <title>{% block title %}{% endblock %}</title>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+</head>
+<body>
+    <table border="1px"  class="table table-striped  table-dark">
+    <th>username</th>
+    <th>Department</th>
+    <th>Complaint</th>
+           <th>Status</th>
+     </tr>
+{% for data in datas %}
+    {% if user.username == data.username %}
+        <tr>
+            <td>{{ data.username }}</td>
+            <td>{{ data.dept }}</td>
+            <td>{{ data.complaint }}</td>
+            <td>{{ data.status }}</td>
+
+        </tr>
+    {% else %}
+
+        {% endif %}
+{% endfor %}
+</table>
+</body>
+</html>

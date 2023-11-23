@@ -1,0 +1,22 @@
+{% extends "index.html" %}
+{% load static %}
+{% block content %}
+
+    {% if user.is_authenticated %}
+<div class="bg-image"
+     style="background-image: url('{%static '/img/home1.jpg' %}');
+            height: 83vh">
+		<h1 style="color:#03396c">Welcome : {{user.username}}</h1>
+		<h4>Please provide full details concerning your problem,and explain what you would like me to do to resolve it.
+		Write clearly and We do our best.</h4>
+</div>
+	{% else %}
+		<div class="bg-image"
+     style="background-image: url('{%static '/img/co.png' %}');
+            height: 80vh">
+			 </div>
+	{% endif %}
+{% endblock %}
+
+
+
